@@ -1,2 +1,4 @@
 .container {
+    padding-top: 8px;
+    display: flex;
 }

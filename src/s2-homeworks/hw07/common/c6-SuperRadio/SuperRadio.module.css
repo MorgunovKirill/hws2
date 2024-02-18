@@ -1,15 +1,37 @@
 .radio {
+    display: none;
 }
 
-.radio::before {
+.label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    background-image: url('/public/radiobox-blank.svg');
+    background-repeat: no-repeat;
 }
 
-
-.radio:checked::before {
+.label:has(.radio:checked)::before {
+    background-image: url('/public/radiobox.svg');
 }
 
 .label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 22px;
+    padding-left: 35px;
 }
 
 .options {
+    display: flex;
+    flex-direction: column;
 }
