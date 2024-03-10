@@ -42,7 +42,6 @@ function Clock() {
 
     const formatterMonth = new Intl.DateTimeFormat("en", {
         month: "long",
-        day: "numeric"
     });
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
