@@ -15,16 +15,15 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    const change = (event: Event,  value: number | number[]) => {
+    const change = (event: Event, value: number | number[]) => {
         // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-        console.log('value', value)
-        if(Array.isArray(value)) {
-
+        if(value instanceof Array) {
+            setValue1(value[0])
+            setValue2(value[1])
         } else {
             setValue1(value)
         }
     }
-
     return (
         <div id={'hw11'}>
             <div className={s2.hwTitle}>Homework #11</div>
@@ -46,7 +45,7 @@ function HW11() {
                             id={'hw11-double-slider'}
                             // сделать так чтоб value1/2 изменялось // пишет студент
                             onChange={change}
-                            value={value1}
+                            value={[value1, value2]}
                         />
                         <span id={'hw11-value-2'} className={s.number}>{value2}</span>
                     </div>
